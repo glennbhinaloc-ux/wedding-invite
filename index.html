@@ -1201,20 +1201,23 @@
       // ----- ENVELOPE OPENING -----
       openBtn.addEventListener('click', function() {
         envelope.classList.add('open');
-        // after animation, hide overlay and show main
+        
+        bgMusic.play().then(() => {
+          isMusicPlaying = true;
+          musicToggle.innerHTML = '<i class="fas fa-pause"></i>';
+        }).catch(e => console.log('Audio autoplay failed:', e));
+        
+
         setTimeout(() => {
           envelopeOverlay.classList.add('hidden');
           mainContent.classList.add('revealed');
-          // trigger scroll animations after reveal
           setTimeout(() => {
             handleScrollAnimations();
-            // update countdown after reveal
             updateCountdown();
           }, 300);
         }, 1200);
       });
 
-      // ----- COUNTDOWN TIMER -----
       function updateCountdown() {
         const now = new Date().getTime();
         const distance = WEDDING_DATE - now;
