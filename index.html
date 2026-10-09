@@ -541,6 +541,72 @@
       border: 1px solid var(--gold);
     }
 
+    /* ---------- PAIRED ENTOURAGE (BAG-O) ---------- */
+    .couple-pairs {
+      display: flex;
+      flex-direction: column;
+      gap: 18px;
+      margin-top: 20px;
+    }
+
+    .pair-row {
+      display: grid;
+      grid-template-columns: 1fr auto 1fr;
+      align-items: center;
+      gap: 15px;
+      padding: 16px 20px;
+      background: rgba(255, 250, 240, 0.5);
+      border-radius: 12px;
+      border: 1px solid rgba(197, 160, 89, 0.3);
+      transition: all 0.3s ease;
+    }
+
+    .pair-row:hover {
+      background: rgba(197, 160, 89, 0.12);
+      border-color: var(--gold);
+      transform: translateY(-2px);
+      box-shadow: 0 8px 20px -8px rgba(107, 30, 46, 0.25);
+    }
+
+    .pair-person {
+      display: flex;
+      flex-direction: column;
+      text-align: center;
+    }
+
+    .pair-role {
+      font-family: 'Montserrat', sans-serif;
+      font-size: 0.65rem;
+      letter-spacing: 3px;
+      text-transform: uppercase;
+      color: var(--olive);
+      margin-bottom: 4px;
+    }
+
+    .pair-name {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 1.25rem;
+      color: var(--burgundy);
+      font-weight: 500;
+    }
+
+    .pair-heart {
+      color: var(--gold-dark);
+      font-size: 1rem;
+      opacity: 0.7;
+    }
+
+    @media (max-width: 500px) {
+      .pair-row {
+        grid-template-columns: 1fr;
+        gap: 6px;
+        text-align: center;
+      }
+      .pair-heart {
+        transform: rotate(90deg);
+      }
+    }
+
     /* ---------- GALLERY ---------- */
     .gallery-grid {
       display: grid;
@@ -915,39 +981,78 @@
           </div>
           <div class="luxury-card fade-in">
             <div class="detail-title">Parents of the Groom</div>
-            <div class="detail-text">Mr. & Mrs. Charles Montgomery</div>
+            <div class="detail-text">Mr. & Mrs. Piquero</div>
           </div>
         </div>
         <div class="luxury-card fade-in" style="margin-bottom: 30px;">
           <div class="detail-title">Principal Sponsors</div>
           <ul class="entourage-list">
-            <li>Dr. & Mrs. James Whitfield</li>
-            <li>Mr. & Mrs. Robert Chen</li>
-            <li>Mr. & Mrs. William Hayes</li>
-            <li>Dr. & Mrs. Alexander Reed</li>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
           </ul>
         </div>
         <div class="details-grid">
           <div class="luxury-card fade-in">
             <div class="detail-title">Maid of Honor</div>
-            <div class="detail-text">Sophia Bennett</div>
+            <div class="detail-text"></div>
           </div>
           <div class="luxury-card fade-in">
             <div class="detail-title">Best Man</div>
-            <div class="detail-text">Liam Montgomery</div>
+            <div class="detail-text"></div>
           </div>
         </div>
+
+        <!-- ===== BRIDESMAIDS & GROOMSMEN (PAIRED) ===== -->
         <div class="luxury-card fade-in" style="margin-top: 30px;">
           <div class="detail-title">Bridesmaids & Groomsmen</div>
-          <ul class="entourage-list">
-            <li>Emma Clarke</li>
-            <li>Noah Foster</li>
-            <li>Olivia Reed</li>
-            <li>Ethan Brooks</li>
-            <li>Ava Sinclair</li>
-            <li>Mason Pierce</li>
-          </ul>
+
+          <div class="couple-pairs">
+            <!-- Pair 1: Glenn Jr. ❤ Silvia -->
+            <div class="pair-row">
+              <div class="pair-person">
+                <span class="pair-role">Groomsman</span>
+                <span class="pair-name">Glenn Hinaloc Jr.</span>
+              </div>
+              <div class="pair-heart"><i class="fas fa-heart"></i></div>
+              <div class="pair-person">
+                <span class="pair-role">Bridesmaid</span>
+                <span class="pair-name">Silvia Abrea</span>
+              </div>
+            </div>
+
+            <!-- Pair 2: Mark Glen ❤ [Name] -->
+            <div class="pair-row">
+              <div class="pair-person">
+                <span class="pair-role">Groomsman</span>
+                <span class="pair-name">Mark Glen Hinaloc</span>
+              </div>
+              <div class="pair-heart"><i class="fas fa-heart"></i></div>
+              <div class="pair-person">
+                <span class="pair-role">Bridesmaid</span>
+                <span class="pair-name">Marianne Beracis</span>
+              </div>
+            </div>
+
+            <!-- Pair 3: [Name] ❤ [Name] -->
+            <div class="pair-row">
+              <div class="pair-person">
+                <span class="pair-role">Groomsman</span>
+                <span class="pair-name"></span>
+              </div>
+              <div class="pair-heart"><i class="fas fa-heart"></i></div>
+              <div class="pair-person">
+                <span class="pair-role">Bridesmaid</span>
+                <span class="pair-name"></span>
+              </div>
+            </div>
+
+            <!-- Kung gusto nimo og dugang pares, kopyaha lang ang pair-row block sa taas -->
+          </div>
         </div>
+        <!-- ===== END BRIDESMAIDS & GROOMSMEN ===== -->
+
       </div>
     </section>
 
